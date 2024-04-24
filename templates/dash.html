@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Recognition</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url("/static/pexels-eberhard-grossgasteiger-1287075.jpg");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        padding-top: 20px;
+      }
+
+      .sidebar h2 {
+        color: white;
+        text-align: center;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 10px;
+      }
+
+      .sidebar ul li a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .sidebar ul li a.active {
+        background-color: #4caf50;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url("beautiful.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: 250px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: large;
+        font-style: sans-serif;
+        color: #fff;
+        text-align: top;
+      }
+      a {
+        cursor: pointer;
+      }
+      .btnLogin-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li>
+          <a href="" class="active"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a onclick="window.location.href='/about'"
+            ><i class="fas fa-info-circle"></i> About</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/contact'"
+            ><i class="fas fa-envelope"></i> Contact</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/feedback'"
+            ><i class="fas fa-comments"></i> New User</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/eman'"
+            ><i class="fas fa-smile"></i> Face recogniton</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>
+        Welcome to our home page! We're passionate about cutting-edge technology, and we're excited to share with you our latest innovation in the field of face recognition.
+
+Face recognition has become a vital aspect of various industries, from security to entertainment, and our team of has been hard at work perfecting a powerful method known as Local Binary Patterns Histograms (LBPH).
+
+LBPH is a sophisticated yet efficient algorithm that excels in recognizing faces by capturing local patterns and textures in facial images. Unlike traditional methods, LBPH is robust to changes in lighting conditions, facial expressions, and minor occlusions, making it ideal for real-world applications.
+
+With our intuitive and user-friendly interface, integrating LBPH into your projects has never been easier. Whether you're enhancing security systems, personalizing user experiences, or creating innovative applications, our face recognition technology powered by LBPH delivers unparalleled accuracy and reliability.
+      </h1>
+      <button><a onclick="window.location.href='/signin'" class="btnLogin-popup">LOGOUT</a></button>
+    </div>
+  </body>
+</html>

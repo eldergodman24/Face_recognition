@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Detection</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        background: url("/static/flight.jpg");
+        background-size: cover;
+      }
+      button{
+      background-color:white;
+      color:black;
+      }
+      br {
+        startCamera {
+          position: relative;
+          top: 200px;
+          bottom: 50px;
+          align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center><img id="video_feed" src="" width="640" height="480"></center>
+      <center><form action="/start_cam" method="post">
+        <label for="name" style="color:white">Select your id:</label>
+        <select name="name" id="name">
+            <option value="Tharsan">1122</option>
+            <option value="Sriram">1123</option>
+        </select>
+        <button type="submit">Start Camera</button>
+    </form></center>
+    <center><form action="/stop_cam" method="post">
+        <button type="submit">Stop Camera</button>
+    </form></center>
+     <script>
+        document.getElementById('video_feed').src = "{{ video_src }}";
+    </script>
+  </body>
+</html>

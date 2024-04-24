@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+        background: url("/static/pexels-eberhard-grossgasteiger-1287075.jpg")
+          no-repeat;
+        background-size: cover;
+        margin-top: 250px;
+        margin-bottom: 50px;
+      }
+      .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        padding-top: 20px;
+      }
+
+      .sidebar h2 {
+        color: white;
+        text-align: center;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 10px;
+      }
+
+      .sidebar ul li a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .sidebar ul li a.active {
+        background-color: #4caf50;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url("beautiful.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: 250px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: large;
+        font-style: sans-serif;
+        color: #fff;
+        text-align: top;
+      }
+      a {
+        cursor: pointer;
+      }
+      .btnLogin-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Here you can add code to handle form submission, like AJAX request, etc.
+          alert("Feedback submitted successfully!");
+          window.location.href = "dash.html";
+        });
+    </script>
+  </head>
+  <body>
+  <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li>
+          <a onclick="window.location.href='/dash'" class="active"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a onclick="window.location.href='/about'"
+            ><i class="fas fa-info-circle"></i> About</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/contact'"
+            ><i class="fas fa-envelope"></i> Contact</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/feedback'"
+            ><i class="fas fa-comments"></i> New User</a
+          >
+        </li>
+        <li>
+          <a onclick="window.location.href='/eman'"
+            ><i class="fas fa-smile"></i> Face recogniton</a
+          >
+        </li>
+      </ul>
+    </div>
+    <center><form action="{{ url_for('feedback')}}" method="post">
+      <label for="name">Name:</label><br />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        position="center"
+      /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="subject">Address:</label><br />
+      <input type="text" id="subject" name="subject" /><br />
+
+      <label for="message">Phone no:</label><br />
+      <input type="text" maxlength="10" id="message" name="message"/><br />
+
+      <label for="u_id">ID:</label><br />
+      <input type="text" id="u_id" name="u_id"/><br />
+
+      <input type="submit" value="Submit" />
+      <button><a href="{{ url_for('dash') }}">Back To Dashboard</label></button>
+    </form></center>
+  </body>
+</html>
